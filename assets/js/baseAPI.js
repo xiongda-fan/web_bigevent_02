@@ -26,7 +26,7 @@ $.ajaxPrefilter(function(params) {
     //3. 登录拦截    拦截所有响应  判断身份认证信息
     //无论成功还是失败 都会触发complete方法
     params.complete = function(res) {
-        console.log(res);
+        // console.log(res);
         //判断 如果是身份认证失败  强制跳转回登陆页面
         if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
             //1. 删除本地的token
